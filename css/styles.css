@@ -3,7 +3,9 @@
    ================================== */
 
 /* CSS Reset & Base */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -11,24 +13,34 @@
 
 :root {
   /* Colors - Sage & Plum palette (Calm Growth) */
-  --color-primary: #5a7d6e;       /* Sage Green - calming, natural */
-  --color-primary-light: #7ea091; /* Light Sage */
-  --color-primary-dark: #3d5a4d;  /* Deep Sage */
-  --color-accent: #8b6b7a;        /* Mauve Plum - sophisticated, warm */
-  --color-accent-light: #b098a8;  /* Dusty Rose */
-  
-  --color-text: #2d3e38;          /* Deep Green-Gray */
-  --color-text-light: #5a6b65;    /* Medium Gray-Green */
-  --color-text-muted: #8a9a94;    /* Muted Gray-Green */
-  
-  --color-bg: #fafbfa;            /* Warm White */
-  --color-bg-alt: #f0f4f2;        /* Soft Green-Tinted */
+  --color-primary: #5a7d6e;
+  /* Sage Green - calming, natural */
+  --color-primary-light: #7ea091;
+  /* Light Sage */
+  --color-primary-dark: #3d5a4d;
+  /* Deep Sage */
+  --color-accent: #8b6b7a;
+  /* Mauve Plum - sophisticated, warm */
+  --color-accent-light: #b098a8;
+  /* Dusty Rose */
+
+  --color-text: #2d3e38;
+  /* Deep Green-Gray */
+  --color-text-light: #5a6b65;
+  /* Medium Gray-Green */
+  --color-text-muted: #8a9a94;
+  /* Muted Gray-Green */
+
+  --color-bg: #fafbfa;
+  /* Warm White */
+  --color-bg-alt: #f0f4f2;
+  /* Soft Green-Tinted */
   --color-white: #ffffff;
-  
+
   /* Typography */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  
+
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
@@ -38,7 +50,7 @@
   --text-3xl: 1.875rem;
   --text-4xl: 2.25rem;
   --text-5xl: 3rem;
-  
+
   /* Spacing */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -52,23 +64,23 @@
   --space-16: 4rem;
   --space-20: 5rem;
   --space-24: 6rem;
-  
+
   /* Layout */
   --max-width: 1200px;
   --max-width-content: 800px;
-  
+
   /* Borders & Shadows */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
   --radius-xl: 16px;
   --radius-full: 9999px;
-  
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
-  --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
-  --shadow-xl: 0 20px 40px rgba(0,0,0,0.12);
-  
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.12);
+
   /* Transitions */
   --transition-fast: 150ms ease;
   --transition-base: 250ms ease;
@@ -92,27 +104,64 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 600;
   line-height: 1.25;
   color: var(--color-primary-dark);
 }
 
-h1 { font-size: var(--text-4xl); margin-bottom: var(--space-6); }
-h2 { font-size: var(--text-3xl); margin-bottom: var(--space-5); }
-h3 { font-size: var(--text-2xl); margin-bottom: var(--space-4); }
-h4 { font-size: var(--text-xl); margin-bottom: var(--space-3); }
+h1 {
+  font-size: var(--text-4xl);
+  margin-bottom: var(--space-6);
+}
 
-p { margin-bottom: var(--space-4); }
+h2 {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-5);
+}
+
+h3 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-4);
+}
+
+h4 {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-3);
+}
+
+p {
+  margin-bottom: var(--space-4);
+}
 
 a {
   color: var(--color-accent);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
-a:hover { 
-  color: var(--color-accent-light); 
+
+a:hover {
+  color: var(--color-primary-light);
+}
+
+/* Links inside dark/green sections (like hero or footer) */
+.hero a:not(.btn),
+.site-footer a:not(.btn),
+.section-alt a:not(.btn) {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+.hero a:not(.btn):hover,
+.site-footer a:not(.btn):hover,
+.section-alt a:not(.btn):hover {
+  opacity: 0.8;
 }
 
 /* Utility Classes */
@@ -123,8 +172,13 @@ a:hover {
   padding: 0 var(--space-4);
 }
 
-.text-center { text-align: center; }
-.text-muted { color: var(--color-text-muted); }
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
 
 /* ===================================
    Header & Navigation
@@ -444,6 +498,11 @@ a:hover {
   font-size: var(--text-2xl);
 }
 
+.card-centered {
+  /* Default to full width on mobile */
+  grid-column: span 1;
+}
+
 .card-icon img {
   width: 32px;
   height: 32px;
@@ -661,7 +720,7 @@ a:hover {
 }
 
 .footer-nav a {
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   font-size: var(--text-sm);
 }
 
@@ -671,7 +730,7 @@ a:hover {
 
 .footer-bottom {
   padding-top: var(--space-6);
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: var(--text-sm);
   opacity: 0.6;
 }
@@ -686,33 +745,33 @@ a:hover {
     --text-4xl: 2.5rem;
     --text-5xl: 3.5rem;
   }
-  
+
   .hero {
     padding: var(--space-20) 0;
   }
-  
+
   .hero h1 {
     font-size: var(--text-4xl);
   }
-  
+
   .hero-image {
     width: 180px;
     height: 180px;
   }
-  
+
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .bio-section {
     grid-template-columns: 300px 1fr;
     text-align: left;
   }
-  
+
   .bio-image {
     margin: 0;
   }
-  
+
   .contact-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -723,26 +782,30 @@ a:hover {
   .main-nav {
     display: block;
   }
-  
+
   .menu-toggle,
   .mobile-nav {
     display: none !important;
   }
-  
+
   .hero h1 {
     font-size: var(--text-5xl);
   }
-  
+
   .hero .tagline {
     font-size: var(--text-xl);
   }
-  
+
   .card-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   .card-grid.four-col {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .card-centered {
+    grid-column: 2;
   }
 }
 
