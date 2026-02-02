@@ -10,19 +10,19 @@
 }
 
 :root {
-  /* Colors - Warm, professional palette */
-  --color-primary: #2d5a6b;       /* Deep teal */
-  --color-primary-light: #4a8fa3; /* Light teal */
-  --color-primary-dark: #1e3d48;  /* Dark teal */
-  --color-accent: #c9a962;        /* Warm gold */
-  --color-accent-light: #e8d5a3;  /* Light gold */
+  /* Colors - Sage & Plum palette (Calm Growth) */
+  --color-primary: #5a7d6e;       /* Sage Green - calming, natural */
+  --color-primary-light: #7ea091; /* Light Sage */
+  --color-primary-dark: #3d5a4d;  /* Deep Sage */
+  --color-accent: #8b6b7a;        /* Mauve Plum - sophisticated, warm */
+  --color-accent-light: #b098a8;  /* Dusty Rose */
   
-  --color-text: #2c3e4a;          /* Dark blue-gray */
-  --color-text-light: #5a6d7a;    /* Medium gray */
-  --color-text-muted: #8a9aa6;    /* Muted gray */
+  --color-text: #2d3e38;          /* Deep Green-Gray */
+  --color-text-light: #5a6b65;    /* Medium Gray-Green */
+  --color-text-muted: #8a9a94;    /* Muted Gray-Green */
   
-  --color-bg: #fafbfc;            /* Off-white */
-  --color-bg-alt: #f0f4f6;        /* Light gray */
+  --color-bg: #fafbfa;            /* Warm White */
+  --color-bg-alt: #f0f4f2;        /* Soft Green-Tinted */
   --color-white: #ffffff;
   
   /* Typography */
@@ -107,11 +107,13 @@ h4 { font-size: var(--text-xl); margin-bottom: var(--space-3); }
 p { margin-bottom: var(--space-4); }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-accent);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
-a:hover { color: var(--color-primary-light); }
+a:hover { 
+  color: var(--color-accent-light); 
+}
 
 /* Utility Classes */
 .container {
@@ -311,7 +313,7 @@ a:hover { color: var(--color-primary-light); }
   justify-content: center;
   padding: var(--space-3) var(--space-6);
   font-size: var(--text-base);
-  font-weight: 600;
+  font-weight: 700;
   border-radius: var(--radius-md);
   border: none;
   cursor: pointer;
@@ -321,14 +323,21 @@ a:hover { color: var(--color-primary-light); }
 
 .btn-primary {
   background: var(--color-accent);
-  color: var(--color-primary-dark);
+  color: var(--color-white);
 }
 
 .btn-primary:hover {
-  background: var(--color-accent-light);
-  color: var(--color-primary-dark);
+  background: var(--color-accent);
+  color: var(--color-accent-light);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active {
+  background: var(--color-accent);
+  color: var(--color-bg-alt);
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-secondary {
@@ -338,8 +347,19 @@ a:hover { color: var(--color-primary-light); }
 }
 
 .btn-secondary:hover {
-  background: var(--color-white);
-  color: var(--color-primary);
+  background: transparent;
+  color: var(--color-accent-light);
+  border-color: var(--color-accent-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:active {
+  background: transparent;
+  color: var(--color-white);
+  border-color: var(--color-white);
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-outline {
@@ -349,8 +369,19 @@ a:hover { color: var(--color-primary-light); }
 }
 
 .btn-outline:hover {
-  background: var(--color-primary);
-  color: var(--color-white);
+  background: transparent;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline:active {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
 }
 
 /* ===================================
